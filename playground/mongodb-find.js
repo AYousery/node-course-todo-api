@@ -27,7 +27,7 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
 
     // Getting Item with specified Criterea from the list
     db.collection('Todos').find({
-        _id: {$nin: new ObjectID("5f5686948ff97f19b4b1fd48")}
+        _id: new ObjectID("5f5686948ff97f19b4b1fd48")
         }).toArray().then( (docs) => {
             // console.log('Todos');
             console.log(JSON.stringify(docs, undefined, 2));
